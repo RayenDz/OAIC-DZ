@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Lieux</title>
+    <style>
+        body {
+            background: transparent;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .search-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            padding: 10px;
+        }
+        .search-box input {
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            padding: 10px;
+            width: 90%;
+            max-width: 500px;
+            font-size: 16px;
+            margin: 10px 0;
+            background: #276495;
+            color: #fff;
+        }
+        .search-box button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #276495;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 90%;
+            max-width: 500px;
+        }
+        .search-box button:hover {
+            background-color: #1f4b73;
+        }
+
+        /* Media Queries pour un design responsive */
+        @media (max-width: 768px) {
+            .search-box input, .search-box button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-box input, .search-box button {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <h2>Recherche de Lieux</h2>
+        <input type="text" id="place1" placeholder="Entrez le premier lieu">
+        <input type="text" id="place2" placeholder="Entrez le deuxième lieu">
+        <button onclick="searchPlaces()">Rechercher la Distance</button>
+    </div>
+
+    <script>
+        function searchPlaces() {
+            const place1 = document.getElementById('place1').value;
+            const place2 = document.getElementById('place2').value;
+            
+            if (place1 && place2) {
+                const formattedPlace1 = place1.split(' ').join('+');
+                const formattedPlace2 = place2.split(' ').join('+');
+                
+                const url = `https://www.google.com/maps/dir/${formattedPlace1}/${formattedPlace2}`;
+                
+                window.open(url, '_blank');
+            } else {
+                alert('Veuillez entrer les deux lieux pour rechercher la distance entre eux.');
+            }
+        }
+    </script>
+</body>
+</html>

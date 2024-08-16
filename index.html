@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion - OAIC DZ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://www.echaab.dz/static/medias/2023/10/images-2023-10-02T190415.748.jpeg') no-repeat center center fixed; /* رابط الصورة هنا */
+            background-size: cover; /* تكييف حجم الصورة لتغطية الخلفية */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            -webkit-user-select: none; /* تعطيل تحديد النصوص على متصفحات Webkit */
+            -moz-user-select: none; /* تعطيل تحديد النصوص على Firefox */
+            -ms-user-select: none; /* تعطيل تحديد النصوص على IE/Edge */
+            user-select: none; /* تعطيل تحديد النصوص بشكل عام */
+        }
+        .login-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9); /* خلفية شفافة قليلاً */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 400px; /* أقصى عرض للحاوية */
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+            color: #333;
+        }
+        .login-container input {
+            width: calc(100% - 22px); /* عرض كامل مع بعض المسافة للحدود */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff; /* Bleu */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        .login-container button:hover {
+            background: #0056b3; /* Bleu plus foncé */
+        }
+
+        /* التصميم المتجاوب */
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 15px;
+                width: 90%;
+            }
+            .login-container h2 {
+                font-size: 1.5em;
+            }
+            .login-container input, .login-container button {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Connexion - OAIC DZ</h2>
+        <form id="loginForm">
+            <input type="password" id="password" placeholder="Entrez le mot de passe" required>
+            <button type="submit">Se Connecter</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var password = document.getElementById('password').value;
+            var correctPassword = 'rekab12'; // كلمة المرور الصحيحة
+
+            if (password === correctPassword) {
+                window.location.href = 'https://rayendz.github.io/Passwored/lieuorg/index.html';
+            } else {
+                alert('Mot de passe incorrect. Essayez encore.');
+
+                // إرسال معلومات محاولة الدخول إلى الخادم
+                fetch('/log_attempt', { // استبدل '/log_attempt' بعنوان URL الخاص بك
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        'password': password,
+                        'status': 'failed'
+                    })
+                }).then(response => {
+                    if (!response.ok) {
+                        console.error('Erreur lors de l\'envoi des informations de tentative.');
+                    }
+                }).catch(error => {
+                    console.error('Erreur de réseau:', error);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

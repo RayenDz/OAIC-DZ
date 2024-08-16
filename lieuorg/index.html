@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekab Abdelkader</title>
+    <style>
+        body {
+            background: transparent;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            width: 95%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button {
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .button i {
+            color: #fff;
+        }
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .search-box input {
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            padding: 10px;
+            width: 50%;
+            font-size: 16px;
+            background: #276495;
+            color: #fff;
+        }
+        .search-box i {
+            color: #fff;
+            margin-left: -40px; /* Adjust as needed */
+            cursor: pointer;
+        }
+        .actions {
+            text-align: center;
+            margin: 20px;
+        }
+        .actions button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #276495;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+        }
+        .actions button:hover {
+            background-color: #1f4b73;
+        }
+        .pagination {
+            width: 99%;
+            background: #097A89;
+            color: #fff;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+        }
+        .pagination a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .search-box input {
+                width: 70%;
+            }
+            .pagination {
+                font-size: 14px;
+            }
+            .actions button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .search-box input {
+                width: 85%;
+            }
+            .pagination {
+                font-size: 12px;
+            }
+            table {
+                width: 100%;
+                font-size: 14px;
+            }
+            th, td {
+                padding: 6px;
+            }
+            .search-box i {
+                margin-left: -30px; /* Adjust for smaller screens */
+            }
+            .actions button {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" id="textSearch" name="find" value="" autocomplete="off" placeholder="Recherche...">
+        <i class="fas fa-search" onclick="searchData()" title="Rechercher"></i>
+    </div>
+
+    <div class="actions">
+    <button onclick="addRow()">Ajouter</button>
+        
+           
+        <button onclick="window.location.href='https://rayendz.github.io/Passwored/Distance/index.html'">
+            Recherche Distance
+            
+        <button onclick="window.location.href='https://rayendz.github.io/Passwored/RechMap/index.html'">
+            Recherche de Lieux
+       
+        <button onclick="window.location.href='https://www.google.com/maps/dir/OAIC+Direction+G%C3%A9n%C3%A9rale+(Office+Alg%C3%A9rien+Interprofessionnel+des+C%C3%A9r%C3%A9ales),+Rue+Djilali+BEN+AMARA,+%D8%B4%D8%B1%D8%A7%D9%82%D8%A9%E2%80%AD/CCLS+KHEMIS+MILIANA,+%D8%AE%D9%85%D9%8A%D8%B3+%D9%85%D9%84%D9%8A%D8%A7%D9%86%D8%A9%E2%80%AD/@36.511962,2.995354,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x128fb3079216c35b:0x6b224471d5bd5cf0!2m2!1d3.0580592!2d36.7791524!1m5!1m1!1s0x128594bdab41d885:0xa9ff69336800098f!2m2!1d2.2111124!2d36.2618538?entry=ttu'">
+            Recharche Sur Map
+        
+</div>
+    <table class="tablErp" id="tableERP" align="center">
+        <caption class="bk-co">La programmation se fait par Rekab Abdelkader N° de téléphone 0552 65 60 78</caption>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Code</th>
+                <th>Lieu</th>
+                <th>Organisme</th>
+                <th>Type</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody class="tbody" id="tableBody">
+            <!-- Rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <div class="pagination" id="pagination">
+        <!-- Pagination will be inserted here by JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
