@@ -18,7 +18,7 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 0.5rem;
             text-align: center;
         }
         th {
@@ -26,7 +26,7 @@
         }
         .button {
             border: none;
-            padding: 10px;
+            padding: 0.625rem;
             cursor: pointer;
         }
         .button i {
@@ -40,24 +40,26 @@
         .search-box input {
             border: 2px solid #aaa;
             border-radius: 4px;
-            padding: 10px;
+            padding: 0.625rem;
             width: 50%;
-            font-size: 16px;
+            font-size: 1rem;
             background: #276495;
             color: #fff;
+            outline: none;
         }
         .search-box i {
             color: #fff;
-            margin-left: -40px; /* Adjust as needed */
+            margin-left: -2.5rem;
             cursor: pointer;
+            font-size: 1.25rem;
         }
         .actions {
             text-align: center;
             margin: 20px;
         }
         .actions button {
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 0.625rem 1.25rem;
+            margin: 0.3125rem;
             cursor: pointer;
             background-color: #276495;
             color: #fff;
@@ -72,13 +74,13 @@
             background: #097A89;
             color: #fff;
             margin: 20px auto;
-            padding: 10px;
+            padding: 0.625rem;
             text-align: center;
         }
         .pagination a {
             color: #fff;
             text-decoration: none;
-            padding: 0 5px;
+            padding: 0 0.3125rem;
         }
 
         /* Media Queries for Responsive Design */
@@ -87,11 +89,11 @@
                 width: 70%;
             }
             .pagination {
-                font-size: 14px;
+                font-size: 0.875rem;
             }
             .actions button {
                 width: 100%;
-                margin: 5px 0;
+                margin: 0.3125rem 0;
             }
         }
         
@@ -100,20 +102,21 @@
                 width: 85%;
             }
             .pagination {
-                font-size: 12px;
+                font-size: 0.75rem;
             }
             table {
                 width: 100%;
-                font-size: 14px;
+                font-size: 0.875rem;
             }
             th, td {
-                padding: 6px;
+                padding: 0.375rem;
             }
             .search-box i {
-                margin-left: -30px; /* Adjust for smaller screens */
+                margin-left: -1.875rem;
+                font-size: 1rem;
             }
             .actions button {
-                padding: 8px 16px;
+                padding: 0.5rem 1rem;
             }
         }
     </style>
@@ -125,19 +128,12 @@
     </div>
 
     <div class="actions">
-    <button onclick="addRow()">Ajouter</button>
-        
-           
-        <button onclick="window.location.href='https://rayendz.github.io/OAIC-DZ/Distance/index.html'">
-            Recherche Distance
-            
-        <button onclick="window.location.href='https://rayendz.github.io/OAIC-DZ/RechMap/index.html'">
-            Recherche de Lieux
-       
-        <button onclick="window.location.href='https://www.google.com/maps/dir/OAIC+Direction+G%C3%A9n%C3%A9rale+(Office+Alg%C3%A9rien+Interprofessionnel+des+C%C3%A9r%C3%A9ales),+Rue+Djilali+BEN+AMARA,+%D8%B4%D8%B1%D8%A7%D9%82%D8%A9%E2%80%AD/CCLS+KHEMIS+MILIANA,+%D8%AE%D9%85%D9%8A%D8%B3+%D9%85%D9%84%D9%8A%D8%A7%D9%86%D8%A9%E2%80%AD/@36.511962,2.995354,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x128fb3079216c35b:0x6b224471d5bd5cf0!2m2!1d3.0580592!2d36.7791524!1m5!1m1!1s0x128594bdab41d885:0xa9ff69336800098f!2m2!1d2.2111124!2d36.2618538?entry=ttu'">
-            Recharche Sur Map
-        
-</div>
+        <button onclick="addRow()">Ajouter</button>
+        <button onclick="window.location.href='https://rayendz.github.io/OAIC-DZ/Distance/index.html'">Recherche Distance</button>
+        <button onclick="window.location.href='https://rayendz.github.io/OAIC-DZ/RechMap/index.html'">Recherche de Lieux</button>
+        <button onclick="window.location.href='https://www.google.com/maps/dir/OAIC+Direction+G%C3%A9n%C3%A9rale+(Office+Alg%C3%A9rien+Interprofessionnel+des+C%C3%A9r%C3%A9ales),+Rue+Djilali+BEN+AMARA,+%D8%B4%D8%B1%D8%A7%D9%82%D8%A9%E2%80%AD/CCLS+KHEMIS+MILIANA,+%D8%AE%D9%85%D9%8A%D8%B3+%D9%85%D9%84%D9%8A%D8%A7%D9%86%D8%A9%E2%80%AD/@36.511962,2.995354,10z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x128fb3079216c35b:0x6b224471d5bd5cf0!2m2!1d3.0580592!2d36.7791524!1m5!1m1!1s0x128594bdab41d885:0xa9ff69336800098f!2m2!1d2.2111124!2d36.2618538?entry=ttu'">Recharche Sur Map</button>
+    </div>
+    
     <table class="tablErp" id="tableERP" align="center">
         <caption class="bk-co">La programmation se fait par Rekab Abdelkader N° de téléphone 0552 65 60 78</caption>
         <thead>
@@ -163,3 +159,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
