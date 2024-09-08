@@ -2112,7 +2112,3 @@ document.onkeydown = function(e) {
     }
 };
 
-// Custom alert on page load
-window.onload = function() {
-    alert('هذا الموقع مخصص فقط للاستخدام الشخصي، يرجى عدم محاولة نسخ أو عرض الكود المصدر.......  يرجى التواصل مع ركاب عبدالقادر رقم الهاتف 78 60 65 0552');
-};
