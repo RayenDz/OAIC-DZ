@@ -1,4 +1,5 @@
-let data = JSON.parse(localStorage.getItem('data')) || [
+document.addEventListener('DOMContentLoaded', function() {
+    let data = JSON.parse(localStorage.getItem('data')) || [
     {Km:"0",Urccls_nord:"1",Urccls_sud:"1",Prives_nord:"1",Prives_sud:"1",id:"0"},
 {Km:"1",Urccls_nord:"20.8748",Urccls_sud:"23.2136",Prives_nord:"17.3957",Prives_sud:"19.3447",id:"1"},
 {Km:"2",Urccls_nord:"21.2858",Urccls_sud:"23.6707",Prives_nord:"17.7382",Prives_sud:"19.7256",id:"2"},
