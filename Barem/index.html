@@ -12,14 +12,37 @@
             background-color: #007bff; /* لون أزرق */
             color: white; /* نص أبيض */
         }
+	     .search-box {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .search-box input {
+            border: 2px solid #aaa;
+            border-radius: 4px;
+            padding: 0.625rem;
+            width: 50%;
+            font-size: 1rem;
+            background: #276495;
+            color: #fff;
+            outline: none;
+        }
+        .search-box i {
+            color: #fff;
+            margin-left: -2.5rem;
+            cursor: pointer;
+            font-size: 1.25rem;
+        }
     </style>
+    
 </head>
 <body>
 <div class="container mt-5">
-    <h2 class="text-center mb-4">إدخال البيانات والبحث</h2>
-    <table id="dataTable" class="table table-bordered table-hover">
-        <thead>
-        <tr>
+        <h2 class="text-center mb-4">إدخال البيانات والبحث</h2>
+        <div class="table-responsive"> <!-- إضافة هذا العنصر لجعل الجدول متجاوب -->
+            <table id="dataTable" class="table table-bordered table-hover">
+                <thead>
+                <tr>
             <th>KM</th>
             <th>Urccls Nord</th>
             <th>Urccls Sud</th>
